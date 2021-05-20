@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav1">
+
+    <fragment
+        android:id="@+id/nav1"
+        android:name="com.example.myapplication.ui.fragments.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/nav2"
+        android:name="com.example.myapplication.ui.fragments.MyOrders"
+        android:label="My Orders"
+        tools:layout="@layout/my_orders_fragment" />
+
+    <fragment
+        android:id="@+id/nav3"
+        android:name="com.example.myapplication.ui.fragments.AccountsFragment"
+        android:label="Accounts"
+        tools:layout="@layout/accounts_fragment" />
+
+    <fragment
+        android:id="@+id/nav4"
+        android:name="com.example.myapplication.ui.fragments.NotificationsFragment"
+        android:label="Notifications"
+        tools:layout="@layout/notifications_fragment" />
+
+    <fragment
+        android:id="@+id/nav5"
+        android:name="com.example.myapplication.ui.fragments.AboutUsFragment"
+        android:label="About us"
+        tools:layout="@layout/aboutus_fragment" />
+
+    <fragment
+        android:id="@+id/nav6"
+        android:name="com.example.myapplication.ui.fragments.CustomerServiceFragment"
+        android:label="Customer service"
+        tools:layout="@layout/customer_fragment" />
+</navigation>

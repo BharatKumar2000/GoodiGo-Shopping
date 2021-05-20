@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.OrderPurchasedFragment">
+
+    <LinearLayout android:id="@+id/order_details"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:fontFamily="serif"
+            android:id="@+id/itemcart"
+            android:background="@drawable/bgback"
+            android:text="    Order Confirmed"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/white" />
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout android:id="@+id/order_iddetails"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/order_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:fontFamily="serif"
+            android:id="@+id/orid"
+            android:text=" Order Id:"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:fontFamily="serif"
+            android:id="@+id/realid"
+            android:background="@drawable/circle"
+            android:text=" ORDXX12546379"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+
+
+    </LinearLayout>
+    <LinearLayout android:id="@+id/order_datedetails"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/order_iddetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:fontFamily="serif"
+            android:id="@+id/date"
+            android:text=" Order Date:"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:fontFamily="serif"
+            android:id="@+id/realdate"
+            android:background="@drawable/circle"
+            android:text=" 21th January20xx"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+
+
+    </LinearLayout>
+    <LinearLayout android:id="@+id/paymentmode_details"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/order_datedetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:fontFamily="serif"
+            android:id="@+id/mode"
+            android:text=" Payment Mode:"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:fontFamily="serif"
+            android:id="@+id/paymentmode"
+            android:background="@drawable/circle"
+            android:text="PhonePe"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+    </LinearLayout>
+    <ListView
+        android:id="@+id/purchased_order_item_list"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/paymentmode_details"
+        tools:listitem="@layout/row_item_order"/>
+    <RelativeLayout
+        android:id="@+id/order_layout"
+        android:layout_width="match_parent"
+        android:layout_below="@id/purchased_order_item_list"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+        <ProgressBar
+            android:id="@+id/progress"
+            android:progressTint="@color/colorPrimary"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/icon_width"
+            android:layout_alignStart="@id/progress_icon_tray"
+            android:layout_alignEnd="@id/progress_icon_tray"
+            android:layout_marginStart="@dimen/icon_width_by_2"
+            android:layout_marginEnd="@dimen/icon_width_by_2"
+            android:max="100"
+            android:layout_alignRight="@id/progress_icon_tray"
+            android:layout_alignLeft="@id/progress_icon_tray" />
+        <LinearLayout
+            android:id="@+id/progress_icon_tray"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_marginEnd="@dimen/align_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/align_margin">
+                <RelativeLayout
+                    android:background="@android:color/transparent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="@dimen/icon_width"
+                    android:layout_height="@dimen/icon_width">
+                    <ImageView
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/circle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+                <ImageView
+                    android:visibility="invisible"
+                    android:id="@+id/icon_stage_1"
+                    android:background="@drawable/border"
+                    app:tint="@color/colorPrimary"
+                    android:padding="8dp"
+                    android:layout_width="@dimen/icon_width"
+                    android:layout_height="@dimen/icon_width"
+                    android:src="@drawable/ic_paymentcomplete"
+                    android:scaleType="centerCrop"/>
+                <TextView
+                    android:textSize="9sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/icon_stage_1"
+                    android:textColor="@android:color/black"
+                    android:text="@string/stage_1"
+                    android:gravity="center"
+                    android:layout_alignStart="@id/icon_stage_1"
+                    android:layout_alignEnd="@id/icon_stage_1"
+                    android:layout_alignLeft="@id/icon_stage_1"
+                    android:layout_alignRight="@id/icon_stage_1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginEnd="@dimen/align_margin"
+                android:layout_marginStart="@dimen/align_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:background="@android:color/transparent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="@dimen/icon_width"
+                    android:layout_height="@dimen/icon_width">
+                    <ImageView
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/circle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+                <ImageView
+                    android:visibility="invisible"
+                    android:id="@+id/icon_stage_2"
+                    android:background="@drawable/border"
+                    app:tint="@color/colorPrimary"
+                    android:padding="8dp"
+                    android:layout_width="@dimen/icon_width"
+                    android:layout_height="@dimen/icon_width"
+                    android:src="@drawable/ic_orderconfirmed"
+                    android:scaleType="centerCrop"/>
+                <TextView
+                    android:textSize="9sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/icon_stage_2"
+                    android:textColor="@android:color/black"
+                    android:text="@string/stage_2"
+                    android:gravity="center"
+                    android:layout_alignStart="@id/icon_stage_2"
+                    android:layout_alignEnd="@id/icon_stage_2"
+                    android:layout_alignLeft="@id/icon_stage_2"
+                    android:layout_alignRight="@id/icon_stage_2"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginEnd="@dimen/align_margin"
+                android:layout_marginStart="@dimen/align_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:background="@android:color/transparent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="@dimen/icon_width"
+                    android:layout_height="@dimen/icon_width">
+                    <ImageView
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/circle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+                <ImageView
+                    android:visibility="invisible"
+                    android:id="@+id/icon_stage_3"
+                    android:background="@drawable/border"
+                    app:tint="@color/colorPrimary"
+                    android:padding="8dp"
+                    android:layout_width="@dimen/icon_width"
+                    android:layout_height="@dimen/icon_width"
+                    android:src="@drawable/ic_outfordelivery"
+                    android:scaleType="centerCrop"/>
+                <TextView
+                    android:textSize="9sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/icon_stage_3"
+                    android:textColor="@android:color/black"
+                    android:text="@string/stage_3"
+                    android:gravity="center"
+                    android:layout_alignStart="@id/icon_stage_3"
+                    android:layout_alignEnd="@id/icon_stage_3"
+                    android:layout_alignLeft="@id/icon_stage_3"
+                    android:layout_alignRight="@id/icon_stage_3"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginEnd="@dimen/align_margin"
+                android:layout_marginStart="@dimen/align_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:background="@android:color/transparent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="@dimen/icon_width"
+                    android:layout_height="@dimen/icon_width">
+                    <ImageView
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/circle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+                <ImageView
+                    android:visibility="invisible"
+                    android:id="@+id/icon_stage_4"
+                    android:background="@drawable/border"
+                    app:tint="@color/colorPrimary"
+                    android:padding="8dp"
+                    android:layout_width="@dimen/icon_width"
+                    android:layout_height="@dimen/icon_width"
+                    android:src="@drawable/ic_shipping"
+                    android:scaleType="centerCrop"/>
+                <TextView
+                    android:textSize="9sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/icon_stage_4"
+                    android:textColor="@android:color/black"
+                    android:text="@string/stage_4"
+                    android:gravity="center"
+                    android:layout_alignStart="@id/icon_stage_4"
+                    android:layout_alignEnd="@id/icon_stage_4"
+                    android:layout_alignLeft="@id/icon_stage_4"
+                    android:layout_alignRight="@id/icon_stage_4"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginStart="@dimen/align_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/align_margin">
+                <RelativeLayout
+                    android:background="@android:color/transparent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="@dimen/icon_width"
+                    android:layout_height="@dimen/icon_width">
+                    <ImageView
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/circle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+                <ImageView
+                    android:visibility="invisible"
+                    android:id="@+id/icon_stage_5"
+                    android:background="@drawable/border"
+                    app:tint="@color/colorPrimary"
+                    android:padding="8dp"
+                    android:layout_width="@dimen/icon_width"
+                    android:layout_height="@dimen/icon_width"
+                    android:src="@drawable/ic_deliverd"
+                    android:scaleType="centerCrop"/>
+                <TextView
+                    android:textSize="9sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/icon_stage_5"
+                    android:textColor="@android:color/black"
+                    android:text="@string/stage_5"
+                    android:gravity="center"
+                    android:layout_alignStart="@id/icon_stage_5"
+                    android:layout_alignEnd="@id/icon_stage_5"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_alignLeft="@id/icon_stage_5"
+                    android:layout_alignRight="@id/icon_stage_5" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/bttrack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/order_layout"
+        android:layout_centerHorizontal="true"
+        android:background="@color/blue"
+        android:text="Track Order"
+        android:textSize="15dp"
+        android:textColor="@color/transblue"
+        app:backgroundTint="@color/white" />
+
+</RelativeLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.fragments.HomeFragment">
+
+    <GridView
+        android:listSelector="@android:color/transparent"
+        android:id="@+id/gd1"
+        android:padding="5dp"
+        android:background="@drawable/gradient"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:numColumns="3"
+        tools:listitem="@layout/row_item"/>
+    <TextView android:id="@+id/no_items"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="@string/msg_no_items"/>
+</RelativeLayout>

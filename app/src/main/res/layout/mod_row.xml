@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:layout_gravity="center">
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/ivg"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:id="@+id/tvg"
+        android:layout_toRightOf="@id/ivg"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="12dp"
+        android:textStyle="bold"
+        android:text="items"
+        android:textSize="15dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvg2"
+        android:text="items"
+        android:textSize="20dp"
+        android:layout_marginLeft="5dp"
+        android:textStyle="italic"
+        android:textColor="@color/red"
+        android:layout_toRightOf="@id/ivg"
+        android:layout_below="@id/tvg"
+        android:layout_alignParentRight="true"
+        />
+
+
+    <TextView
+        android:id="@+id/tvg3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/tvg2"
+        android:textColor="@color/blue"
+         android:text="ratings"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivg"
+        android:id="@+id/addtocart"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/gdadd"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivg"
+        android:id="@+id/removefromcart"
+        android:layout_toRightOf="@id/addtocart"
+        android:src="@drawable/remove_cart" />
+</RelativeLayout>

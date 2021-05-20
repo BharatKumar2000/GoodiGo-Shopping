@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    package="com.example.myapplication">
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/applaunchericon"
+        android:label="GoodiGo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication"
+        android:usesCleartextTraffic="true"
+
+        tools:targetApi="m"
+        tools:ignore="AllowBackup">
+        <activity android:name=".SignIn" />
+        <activity android:name=".loginAccount" />
+        <activity android:name=".Login" />
+        <activity
+            android:launchMode="singleTask"
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/Theme.MyApplication.NoActionBar" />
+        <activity
+            android:name=".SplashLaunchActivity"
+            android:theme="@style/Theme.MyApplication.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="geo" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SENDTO" />
+            <data android:scheme="mailto" />
+        </intent>
+    </queries>
+
+
+</manifest>

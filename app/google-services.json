@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "278756540423",
+    "firebase_url": "https://goodigo-79f27-default-rtdb.firebaseio.com",
+    "project_id": "goodigo-79f27",
+    "storage_bucket": "goodigo-79f27.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:278756540423:android:df9409fbef3701d4e7aaa2",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "278756540423-vvkgosd1t08gaqdgn0gb9f82602d6ls4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMEQw4gtdboe1YdIBS-mUKTPyGhBAu_u0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "278756540423-vvkgosd1t08gaqdgn0gb9f82602d6ls4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
